@@ -6,8 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /Grid1
+        - /Axes1
         - /mapping1
-        - /mapping1/surround1
         - /mapping1/currPoints1
         - /mapping1/currPoints1/Autocompute Value Bounds1
         - /mapping1/PointCloud21
@@ -18,6 +19,10 @@ Panels:
         - /Odometry1/Odometry1/Covariance1/Orientation1
         - /Path1
         - /MarkerArray1/Namespaces1
+        - /Marker1
+        - /TF1
+        - /TF1/Frames1
+        - /TF1/Tree1
       Splitter Ratio: 0.6432291865348816
     Tree Height: 858
   - Class: rviz/Selection
@@ -46,10 +51,10 @@ Visualization Manager:
   Class: ""
   Displays:
     - Alpha: 1
-      Cell Size: 1000
+      Cell Size: 5
       Class: rviz/Grid
       Color: 160; 160; 164
-      Enabled: false
+      Enabled: true
       Line Style:
         Line Width: 0.029999999329447746
         Value: Lines
@@ -62,16 +67,16 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 40
       Reference Frame: <Fixed Frame>
-      Value: false
+      Value: true
     - Alpha: 1
       Class: rviz/Axes
-      Enabled: false
+      Enabled: true
       Length: 0.699999988079071
       Name: Axes
       Radius: 0.05999999865889549
       Reference Frame: <Fixed Frame>
       Show Trail: false
-      Value: false
+      Value: true
     - Class: rviz/Group
       Displays:
         - Alpha: 1
@@ -114,7 +119,7 @@ Visualization Manager:
           Color: 255; 255; 255
           Color Transformer: Intensity
           Decay Time: 1000
-          Enabled: false
+          Enabled: true
           Invert Rainbow: true
           Max Color: 255; 255; 255
           Min Color: 0; 0; 0
@@ -129,12 +134,12 @@ Visualization Manager:
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
-          Value: false
+          Value: true
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 2.5802323818206787
-            Min Value: -0.31948474049568176
+            Max Value: 2.573594570159912
+            Min Value: -0.30005037784576416
             Value: true
           Axis: Z
           Channel Name: intensity
@@ -229,7 +234,7 @@ Visualization Manager:
       Radius: 0.029999999329447746
       Shaft Diameter: 0.4000000059604645
       Shaft Length: 0.4000000059604645
-      Topic: /drone1/UAV_traj_in_rviz
+      Topic: /drone1/mavros/setpoint_trajectory/desired
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -298,11 +303,63 @@ Visualization Manager:
         {}
       Queue Size: 100
       Value: false
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: visualization_marker
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Filter (blacklist): ""
+      Filter (whitelist): ""
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        base_link:
+          Value: true
+        base_link_frd:
+          Value: false
+        body:
+          Value: false
+        camera_init:
+          Value: false
+        map:
+          Value: true
+        map_ned:
+          Value: false
+        odom:
+          Value: false
+        odom_ned:
+          Value: false
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        camera_init:
+          body:
+            {}
+        map:
+          base_link:
+            base_link_frd:
+              {}
+          map_ned:
+            {}
+        odom:
+          odom_ned:
+            {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 0; 0; 0
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: map
     Frame Rate: 10
   Name: root
   Tools:
@@ -326,7 +383,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 15.151365280151367
+      Distance: 20.6654052734375
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -334,17 +391,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -2.1219284534454346
-        Y: -2.335047721862793
-        Z: -1.2479000091552734
+        X: -0.03272107243537903
+        Y: 1.3337082862854004
+        Z: 0.27347803115844727
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6997965574264526
+      Pitch: 1.134796142578125
       Target Frame: global
-      Yaw: 2.9321866035461426
+      Yaw: 3.1371889114379883
     Saved: ~
 Window Geometry:
   Displays:
@@ -362,5 +419,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 2084
-  X: 499
-  Y: 683
+  X: 497
+  Y: 618
